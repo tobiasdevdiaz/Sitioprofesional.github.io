@@ -1,0 +1,452 @@
+:root{
+    --altura-header: 80px;
+    --padding-left-rigth: 2rem;
+    --ancho-maximo: 1200px;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html{
+    scroll-behavior: smooth;
+}
+body{
+    background-color: rgb(158, 130, 130);
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', 
+    Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+h1{
+    font-size: 3rem;
+}
+a{
+    text-decoration: none;
+}
+ol,ul{
+    list-style: none;
+}
+.header {
+    height:var(--altura-header);
+    background-color: rgb(53, 138, 181);
+}
+.navbar {
+    height: 100%;
+    display: flex;
+    width: min(1200px, 100%);
+    margin: 0 auto;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 0 var(--padding-left-rigth);
+}
+.menu-hamburguesa{
+    display: none;
+}
+.menu-hamburguesa:checked+ .ul-links{
+    height: calc(100vh - var(--altura-header));
+}
+.logo {
+    color: white;
+}
+
+.list-icon {
+    color: white;
+    cursor: pointer;
+}
+.ul-links {
+    width: 100%;
+    background-color: rgb(53, 138, 181);
+    position: absolute;
+    top: var(--altura-header);
+    height: calc(100vh - var(--altura-header));
+    left: 0;
+    height: 0;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+
+    transition: all .3s;
+}
+
+.link {
+    font-size: 2rem;
+    color: white;
+    font-weight: bold;
+}
+
+@media (min-width:768px){
+    .labe-hamburguesa{
+        display: none;
+    }
+    .ul-links{
+        position: static;
+        width: auto;
+        height: auto;
+        flex-direction: row;
+        gap: 2rem;
+    }
+    .link{
+        font-size: 1.2rem;
+        transition: all .3s;
+        padding: .2rem .7rem;
+    }
+    .link:hover{
+        background-color:rgb(39, 114, 152);
+    }
+}
+
+.color-acento{
+    color: rgb(0, 157, 255);
+}
+h2{
+    font-size: 2.7rem;
+}
+h3{
+    font-size: 2rem;
+}
+a{
+    color:white;
+}
+p{
+    font-size: 1.25rem;
+}
+ul{
+    list-style: none;
+}
+li{
+    font-size: 1.25rem;
+}
+button{
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 10px;
+    border: 2px solid rgb(0, 41, 61);
+    box-shadow: 2px 2px 10px rgb(0, 0, 0);
+    color: white;
+    background-color: rgb(0, 97, 145);
+}
+
+button:hover{
+    background-color: rgb(0, 157, 255);
+    transition: all .3s;
+}
+
+container{
+    max-width: 1400px;
+    margin: auto;
+}
+
+#hero{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    height: 60vh;
+    color: rgb(255, 253, 253);
+    background-image: linear-gradient(rgba(96, 96, 96, 0.4),rgba(96, 96, 96, 0.4)),
+    url(imagenes/estetica-dental.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+}
+
+#hero h1{
+    color: white;
+}
+
+#Nosotros{
+    background-image: linear-gradient(rgba(112, 112, 112,0.4),rgba(112, 112, 112,0.4)),
+    url(imagenes/Decoración-Clínica-Dental.jpg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    height: 60vh;
+    color: rgb(255, 251, 251);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+}
+
+#Nosotros .container{
+    text-align: center;
+    padding: 200px 12px;
+}
+#Nosotros .container button{
+    background-color: rgba(0, 113, 154, 0.355);
+}
+
+#tratamientos{
+    background-image: linear-gradient(rgba(112, 112, 112,0.4),rgba(112, 112, 112,0.4)),
+    url(imagenes/tratamientos.jpg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    height: 155vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center; 
+    background-color: rgb(0, 0, 0);
+    color: rgb(0, 0, 0);
+}
+
+#tratamientos .container{
+    padding: 30px 12px;
+}
+
+#tratamientos h2{
+    margin-top: 0;
+}
+#tratamientos .carta{
+    background-position: center center;
+    background-size: cover;
+    padding: 20px 0px;
+    margin: 20px;
+    border-radius: 15px;
+}
+
+#tratamientos .carta button{
+    background-color: rgba(0, 113, 154, 0.355);
+}
+
+#Precios .container{
+    text-align: center;
+    padding: 200px 12px;
+    background-image: linear-gradient(rgba(195, 195, 195, 0.474),rgba(195, 195, 195, 0.474)),
+    url(imagenes/carillas-dentales.jpg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    height: 90vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center; 
+    background-color: rgb(0, 0, 0);
+    color: rgb(0, 0, 0);
+}
+
+#Precios li{
+    margin: 15px 0px;
+    font-weight: bold;
+    
+}
+
+#Precios .container button{
+    background-color: rgba(0, 113, 154, 0.355);
+}
+
+#contacto{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    height: 150vh;
+    background-color: rgb(0, 67, 106);
+    color: white;
+}
+
+#contacto h2{
+    font-size: 5vw;
+}
+
+#contacto button{
+    font-size: 4vw;
+}
+
+
+.footer {
+    position: relative;
+    width: 100%;
+    background: rgb(0, 97, 145);
+    min-height: 100px;
+    padding: 20px 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.social-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin: 10px 5px;
+    flex-wrap: wrap;
+}
+
+.icon-elem {
+    list-style: none;
+}
+
+.icon {
+    color: white;
+    font-size: 32px;
+    display: inline-block;
+    margin: 0 10px;
+    transition: 0.5s;
+}
+
+.icon:hover {
+    transform: translateY(-10px);
+}
+
+.menu {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    align-items: center;
+    margin: 10px 0;
+    flex-wrap: wrap;
+}
+
+.menu-elem {
+    list-style: none;
+}
+.menu-icon {
+    color: white;
+    font-size: 20px;
+    display: inline-block;
+    text-decoration: none;
+    margin: 5px 10px;
+    opacity: 0.5;
+    transition: 0.3s;
+}
+
+.menu-icon:hover {
+    opacity: 1;
+}
+
+.text {
+    color: white;
+    text-align: center;
+    margin-top: 15px;
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+
+/*formulario*/
+
+form{
+    padding: 50px 55px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.2);
+    border-radius: 20px;
+    text-align: center;
+    width: 340px;
+    background-color: rgb(0, 97, 145);
+}
+
+input , textarea{
+    background-color:rgb(0, 64, 96);
+    padding: 20PX 14PX;
+    margin-bottom: 25PX;
+    border: 0;
+    border-radius: 10px;
+    font-size: 15px;
+    color: white;
+}
+
+.btn:hover{
+    background-color:  rgb(0, 157, 255);
+}
+
+
+/*boton de ir arriba*/
+
+.btn-scrolltop {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 15px 20px;
+    background:  rgb(53, 138, 181);
+    color: white;
+    border: 1px solid white;
+    border-radius: 100%;
+    cursor: pointer;
+    transform: translateY(100px);
+    transition: 0.3s;
+}
+
+.btn-scrolltop-on {
+    transform: translateY(0);
+}
+
+/*privacidad de cookies*/
+.cookie-alert {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    height: 15vh;
+    background-color: rgb(103, 103, 103);
+    color: white;
+}
+
+.cookie-alert a {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+.cookie-alert button {
+    background-color: #ffffff;
+    color: #333;
+    border: none;
+    cursor: pointer;
+    margin-left: 15px;
+}
+
+.cookie-alert button:hover {
+    background-color: rgb(156, 156, 156);
+}
+
+/*formulario de contacto*/
+form {
+    max-width: 500px;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+}
+label {
+    display: block;
+    margin-top: 10px;
+}
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+}
+button:hover {
+    background-color: #0056b3;
+}
+.error {
+    color: red;
+    margin-top: 5px;
+}
+
+
+
